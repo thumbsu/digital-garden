@@ -1,7 +1,10 @@
 ---
-tags: [learning, claude-code, ai-tools]
-source: https://www.youtube.com/watch?v=aOJI944guKI
-created: 2026-02-21
+tags:
+  - #learning
+  - #claude-code
+  - #ai-tools
+source: "https://www.youtube.com/watch?v=aOJI944guKI"
+created: "2026-02-21"
 
 ---
 

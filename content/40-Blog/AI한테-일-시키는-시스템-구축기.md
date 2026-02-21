@@ -1,14 +1,14 @@
 ---
-type: "blog"
+type: blog
 tags:
-  - claude-code
-  - ai-tools
-  - developer-workflow
-  - productivity
+  - '#claude-code'
+  - '#ai-tools'
+  - '#developer-workflow'
+  - '#productivity'
 source:
-  - https://www.youtube.com/watch?v=7vihh_G_434
-  - https://github.com/diet103/claude-code-infrastructure-showcase
-created: "2026-02-21"
+  - 'https://www.youtube.com/watch?v=7vihh_G_434'
+  - 'https://github.com/diet103/claude-code-infrastructure-showcase'
+created: '2026-02-21'
 
 ---
 # AI한테 일 시키는 법을 다듬게 된 계기, 그리고 지금 쓰고 있는 시스템들
