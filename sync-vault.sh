@@ -6,7 +6,7 @@
 
 set -euo pipefail
 
-VAULT_PATH="/Users/athumb/Library/CloudStorage/GoogleDrive-uumj222@gmail.com/내 드라이브/Obsidian/second-brain"
+VAULT_PATH="/Users/athumb/Library/CloudStorage/GoogleDrive-uumj222@gmail.com/내 드라이브/Obsidian/blog"
 CONTENT_DIR="$(cd "$(dirname "$0")" && pwd)/content"
 
 # Clean previous content (except index.md which is Quartz's landing page)
@@ -37,7 +37,7 @@ while IFS= read -r -d '' file; do
     COPIED=$((COPIED + 1))
     echo "  ✓ $rel_path"
   fi
-done < <(find "$VAULT_PATH" -name "*.md" -not -path "*/.obsidian/*" -not -path "*/90-Templates/*" -print0)
+done < <(find "$VAULT_PATH" -name "*.md" -not -path "*/.obsidian/*" -print0)
 
 echo ""
 echo "Synced $COPIED published notes to content/"
