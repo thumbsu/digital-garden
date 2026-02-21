@@ -9,7 +9,7 @@ tags:
   - typescript
   - cdp
 source:
-  - https://github.com/anthropics/model-context-protocol
+  - https://github.com/modelcontextprotocol/specification
 
 ---
 
@@ -151,5 +151,5 @@ TypeScript와 `chrome-remote-interface` 라이브러리, 그리고 MCP SDK 세 �
 ---
 
 *obsidian-cdp-mcp는 MIT 라이선스로 공개되어 있다.*
-- [Model Context Protocol](https://github.com/anthropics/model-context-protocol)
-- [chrome-remote-interface](https://github.com/niccokunzmann/chrome-remote-interface)
+- [Model Context Protocol](https://github.com/modelcontextprotocol/specification)
+- [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
