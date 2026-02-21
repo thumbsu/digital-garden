@@ -67,11 +67,11 @@ private async withFallback<T>(
 
 내부 구조를 좀 더 풀어보면 이렇다.
 
-**파일 시스템 백엔드(FsBackend)**가 기본이다. Node.js의 파일 I/O를 쓴다. 마크다운 파싱은 `gray-matter` 라이브러리로 처리하고, frontmatter 추출이나 텍스트 검색을 직접 구현했다. Obsidian 없이도 완전히 독립적으로 동작한다.
+기본은 **파일 시스템 백엔드(FsBackend)** 다. Node.js의 파일 I/O를 쓴다. 마크다운 파싱은 `gray-matter` 라이브러리로 처리하고, frontmatter 추출이나 텍스트 검색을 직접 구현했다. Obsidian 없이도 완전히 독립적으로 동작한다.
 
-**CDP 백엔드(CdpBackend)**는 Obsidian의 내부 API를 직접 호출한다. `chrome-remote-interface` 라이브러리로 CDP에 연결해서, `Runtime.evaluate`로 JavaScript를 Obsidian 안에서 실행한다. `app.vault`, `app.metadataCache`, `app.workspace` 같은 내부 객체에 접근할 수 있다. 파일 시스템 백엔드가 마크다운을 파싱해서 frontmatter를 추출하는 동안, CDP 백엔드는 Obsidian이 이미 파싱해둔 캐시를 그냥 가져다 쓴다.
+**CDP 백엔드(CdpBackend)** 는 Obsidian의 내부 API를 직접 호출한다. `chrome-remote-interface` 라이브러리로 CDP에 연결해서, `Runtime.evaluate`로 JavaScript를 Obsidian 안에서 실행한다. `app.vault`, `app.metadataCache`, `app.workspace` 같은 내부 객체에 접근할 수 있다. 파일 시스템 백엔드가 마크다운을 파싱해서 frontmatter를 추출하는 동안, CDP 백엔드는 Obsidian이 이미 파싱해둔 캐시를 그냥 가져다 쓴다.
 
-**하이브리드 백엔드(HybridBackend)**가 이 둘을 묶는다. 위에서 본 `withFallback` 패턴으로 CDP를 우선 시도하고 파일 시스템으로 폴백한다. 세 백엔드 모두 같은 `Backend` 인터페이스를 구현하니까, 상위 레이어에서는 어떤 백엔드가 실제로 동작하는지 신경 쓸 필요가 없다.
+**하이브리드 백엔드(HybridBackend)** 가 이 둘을 묶는다. 위에서 본 `withFallback` 패턴으로 CDP를 우선 시도하고 파일 시스템으로 폴백한다. 세 백엔드 모두 같은 `Backend` 인터페이스를 구현하니까, 상위 레이어에서는 어떤 백엔드가 실제로 동작하는지 신경 쓸 필요가 없다.
 
 ## vault 하나에 서버 하나? 서버 하나에 vault 전부
 
